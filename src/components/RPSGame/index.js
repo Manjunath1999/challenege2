@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect , useCallback} from 'react'
 import Button from '@mui/material/Button';
 
 
@@ -9,28 +9,28 @@ export default function RPSGame(props) {
     const [randomOne, setRandomOne] = useState({})
 
     const { selected, rpsobj, handlePlayAgain, handleScore } = props
-    const housePickedObj = rpsobj?.filter((f) => f.value == selected)
+    const housePickedObj = rpsobj?.filter((f) => f.value === selected)
     
 
     useEffect(() => {
-        setTimeout(() => {
-            setTimer(timer - 1);
+        const timeout = setTimeout(() => {
+            setTimer(prevTimer => prevTimer - 1);
             if (timer === 0) {
                 pickRandomObj();
             }
-        }, [1000])
+        }, 1000);
 
-    }, [timer])
+        return () => clearTimeout(timeout);
+    }, [timer, pickRandomObj]);
 
 
-    function pickRandomObj() {
-        const houseNotPickedObj = rpsobj?.filter((f) => f.value != selected)
+    const pickRandomObj = useCallback(() => {
+        const houseNotPickedObj = rpsobj?.filter((f) => f.value !== selected);
         const randomIndex = Math.floor(Math.random() * houseNotPickedObj.length);
-        const randomobj = houseNotPickedObj?.[randomIndex]
-        setRandomOne(randomobj)
+        const randomobj = houseNotPickedObj?.[randomIndex];
+        setRandomOne(randomobj);
         calculateResult(randomobj);
-        
-    }
+    }, [rpsobj, selected]);
 
     function calculateResult(randomobj) {
         setTimerFlag(false);
