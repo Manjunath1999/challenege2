@@ -234,7 +234,7 @@
 
 @media screen and (max-width: 600px) {
   .rps-sub-container{
-    width: auto;
+    width: 22rem;
     height: 6rem;
     border-color: white;
     border-radius: 10px;
@@ -262,7 +262,7 @@
  }
 
  .selected-circle{
-  width: auto;
+  width: 5rem;
   background-color: white;
   height: 6rem;
   border-radius: 50%;
@@ -275,6 +275,11 @@
 
 .timer-countdown {
   font-size: 1.5rem;
+}
+
+.circle{
+  width: 5rem;
+  height: 5rem;
 }
 
 .rps-circle-selected-container{
