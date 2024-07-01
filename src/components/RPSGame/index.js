@@ -1,4 +1,4 @@
-import React, { useState, useEffect , useCallback} from 'react'
+import React, { useState, useEffect } from 'react'
 import Button from '@mui/material/Button';
 
 
@@ -13,24 +13,24 @@ export default function RPSGame(props) {
     
 
     useEffect(() => {
-        const timeout = setTimeout(() => {
-            setTimer(prevTimer => prevTimer - 1);
+        setTimeout(() => {
+            setTimer(timer - 1);
             if (timer === 0) {
                 pickRandomObj();
             }
-        }, 1000);
+        }, [1000])
 
-        return () => clearTimeout(timeout);
-    }, [timer, pickRandomObj]);
+    }, [timer])
 
 
-    const pickRandomObj = useCallback(() => {
-        const houseNotPickedObj = rpsobj?.filter((f) => f.value !== selected);
+    function pickRandomObj() {
+        const houseNotPickedObj = rpsobj?.filter((f) => f.value !== selected)
         const randomIndex = Math.floor(Math.random() * houseNotPickedObj.length);
-        const randomobj = houseNotPickedObj?.[randomIndex];
-        setRandomOne(randomobj);
+        const randomobj = houseNotPickedObj?.[randomIndex]
+        setRandomOne(randomobj)
         calculateResult(randomobj);
-    }, [rpsobj, selected]);
+        
+    }
 
     function calculateResult(randomobj) {
         setTimerFlag(false);
