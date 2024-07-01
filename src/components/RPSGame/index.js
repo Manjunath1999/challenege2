@@ -15,7 +15,7 @@ export default function RPSGame(props) {
     useEffect(() => {
         setTimeout(() => {
             setTimer(timer - 1);
-            if (timer == 0) {
+            if (timer === 0) {
                 pickRandomObj();
             }
         }, [1000])
@@ -34,15 +34,15 @@ export default function RPSGame(props) {
 
     function calculateResult(randomobj) {
         setTimerFlag(false);
-        if (housePickedObj[0].value == "rock" && randomobj?.value == "scissor") {
+        if (housePickedObj[0].value === "rock" && randomobj?.value === "scissor") {
             handleScore();
             setResult("YOU WON")
         }
-        if (housePickedObj[0].value == "scissor" && randomobj?.value == "paper") {
+        if (housePickedObj[0].value === "scissor" && randomobj?.value === "paper") {
             handleScore();
             setResult("YOU WON")
         }
-        if (housePickedObj[0].value == "paper" && randomobj?.value == "rock") {
+        if (housePickedObj[0].value === "paper" && randomobj?.value === "rock") {
             handleScore();
             setResult("YOU WON")
         }
