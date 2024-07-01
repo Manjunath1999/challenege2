@@ -1,0 +1,286 @@
+.App {
+  text-align: center;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background: linear-gradient(to right, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.rules-container{
+  width: 100%;
+  float: right;
+  position: absolute;
+  bottom: 3px;
+  
+}
+
+.rules-sub-container{
+   float: right;
+   margin-right: 2rem;
+   border: inset;
+   border-color: white;
+   margin-bottom: 2rem;
+   width: 7.5rem;
+   height: 3rem;
+   border-radius: 5px;
+}
+
+.rules-text{
+  font-size: 1.2rem;
+  font-weight: 550;
+  color: white;
+  margin: 0rem;
+  padding: 0.7rem;
+  letter-spacing: 1.5px;
+}
+
+.modal-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.icon{
+  width: 12px;
+  height: 16px;
+  padding-top: 0.4rem;
+}
+
+.rules-icon{
+  width: 12rem;
+}
+
+.modal-rules{
+  font-weight: 500;
+  margin: 0rem;
+  font-size: 1.3rem;
+}
+
+.rps-container{
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rps-sub-container{
+  width: 30rem;
+  height: 6rem;
+  border-color: white;
+  border-radius: 10px;
+  border: inset;
+  position: absolute;
+  top: 2rem;
+}
+
+.text-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem;
+  margin-top: 0.5rem;
+}
+
+.text-sub-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.rock-text{
+  margin: 0rem;
+  padding: 0rem;
+  font-size: 1.3rem;
+  font-weight: 550;
+}
+
+.score-container{
+  background-color: white;
+  width: 10rem;
+  height: 4.7rem;
+  border-radius: 8px;
+}
+
+.score{
+  margin: 0rem;
+  color: blue;
+  font-size: 1rem;
+  font-weight: 600;
+  padding-top: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.score-value{
+  margin: 0rem;
+  color: black;
+  font-size: 2.3rem;
+  font-weight: 600;
+}
+
+.rps-circle-container{
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.circle{
+  width: 6rem;
+  background-color: white;
+  height: 6rem;
+  border-radius: 50%;
+}
+
+
+.scissor {
+  border: 1rem solid #e9b134;
+  align-content: center
+}
+
+.paper {
+  border: 1rem solid #5d7bf3;
+  align-content: center
+}
+
+.rock {
+  border: 1rem solid #e55a62;
+  align-content: center
+}
+
+.rock{
+  margin-top: 1rem;
+  margin-left: 8rem;
+}
+
+.rps-text-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.rps-circle-selected-container{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.selected-circle{
+  width: 10rem;
+  background-color: white;
+  height: 10rem;
+  border-radius: 50%;
+}
+
+.you-picked{
+  padding-left: 1.5rem;
+}
+
+.selected-one{
+  width: 5.5rem;
+  margin-top: 2rem;
+}
+
+.timer-countdown {
+  font-size: 3rem;
+  color: black;
+}
+
+.you-won {
+  font-size: 2rem;
+  font-weight: 550;
+  color: white;
+}
+
+.result-container{
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+
+@media screen and (max-width: 600px) {
+  .rps-sub-container{
+    width: auto;
+    height: 6rem;
+    border-color: white;
+    border-radius: 10px;
+    border: inset;
+    position: absolute;
+    top: 2rem;
+  }
+
+  .rps-circle-container{
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .rules-container{
+    float: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  .rules-sub-container{
+    float: none;
+   
+ }
+
+ .selected-circle{
+  width: auto;
+  background-color: white;
+  height: 6rem;
+  border-radius: 50%;
+}
+
+.selected-one{
+  width: 4rem;
+  margin-top: 12px;
+}
+
+.timer-countdown {
+  font-size: 1.5rem;
+}
+
+.rps-circle-selected-container{
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+}
