@@ -34,15 +34,8 @@ export default function RPSGame(props) {
 
     function calculateResult(randomobj) {
         setTimerFlag(false);
-        if (housePickedObj[0].value === "rock" && randomobj?.value === "scissor") {
-            handleScore();
-            setResult("YOU WON")
-        }
-        if (housePickedObj[0].value === "scissor" && randomobj?.value === "paper") {
-            handleScore();
-            setResult("YOU WON")
-        }
-        if (housePickedObj[0].value === "paper" && randomobj?.value === "rock") {
+        debugger;
+        if ((housePickedObj[0].value === "rock" && randomobj?.value === "scissor") || (housePickedObj[0].value === "scissor" && randomobj?.value === "paper") || (housePickedObj[0].value === "paper" && randomobj?.value === "rock")) {
             handleScore();
             setResult("YOU WON")
         }
